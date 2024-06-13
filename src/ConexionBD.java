@@ -3,13 +3,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+// esto no tiene sentido
 import conexion.ConexionBD;
 
+// no puedes crear un package aquí
 package conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+// proyecto creado correctamente
 
 /**
  * Clase que permite la conexion con la base de datos 
@@ -19,7 +23,7 @@ public class ConexionBD {
 
 	/**Propiedades de la conexión*/
 	//cambiar el dato para conectar a otra base de datos
-	private static String database="empresa";
+	private static String database="empresa"; // no está en biblioteca
 	private static String usuario="root";
 	private static String contrasena="";
 	private static String url="jdbc:mariadb://localhost/"+database;
@@ -41,6 +45,7 @@ public class ConexionBD {
 		try {
 			//Inicializamos la conexión a la base de datos
 			//Registrar el driver. Previamente habrá que haber añadido el driver al proyecto (Build Path)
+			// driver no incoriparado, no añadido al boot path
 			Class.forName("org.mariadb.jdbc.Driver");
 			//Obtenemos el objeto Connection de la clase 
 			//DriverManager. Lanzará una excepción

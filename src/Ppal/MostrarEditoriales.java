@@ -14,7 +14,7 @@ public class MostrarEditoriales {
 					
 					System.out.println("Conectando a la base de datos...");
 					// Paso 1. Obtener la conexión
-					Connection con = conexion.getConexion();
+					Connection con = conexion.getConexion(); // correcto
 					
 					//Objetos necesarios para hacer una consulta
 							Statement sentencia= null;
@@ -26,16 +26,18 @@ public class MostrarEditoriales {
 						sentencia =con.createStatement();
 					
 					//Paso 3. Ejecutar la sentencia
+						// consulta incorrecta
 						resultado=sentencia.executeQuery("select * from departamentos"); 
 						System.out.println("Cod.Editorial\tNombre\tAnio");
 						
 						// Paso 4. Recorrer el resultado
 						while(resultado.next()) {
+							// datos incorrectos
 							int codEditorial = resultado.getInt("codEditorial");
 							String nombre = resultado.getString("nombre");
 							int nombre = resultado.getInt("nombre");
 							
-							
+							// incorrecto
 							System.out.println(codDepartamento+"\t"+codCentro+"\t"+codDirector+"\t"+tipo_dir+"\t"+presupuesto+"\t"+cod_dpto_jefe+"\t"+nombre);
 						}
 						
@@ -50,6 +52,8 @@ public class MostrarEditoriales {
 				}
 
 			}	
+			// Github creado correctamente
+			// commit realizado
 
 		}
 
